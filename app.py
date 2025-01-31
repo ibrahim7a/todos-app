@@ -25,6 +25,8 @@ class Todo(db.Model):
 
 @app.route('/', methods=['GET','POST'])
 def hello_world():
+
+    # Checks that the db is availabe or not. 
     if not os.path.exists(Path("instance/todo.db")):
         print(f"DB is not available, creating...")
         with app.app_context():
